@@ -8,6 +8,24 @@
     <fragment
         android:id="@+id/tasksFragment"
         android:name="com.codinginflow.mvvmtodo.ui.tasks.TasksFragment"
-        android:label="fragment_tasks"
-        tools:layout="@layout/fragment_tasks" />
+        android:label="Tasks"
+        tools:layout="@layout/fragment_tasks">
+        <action
+            android:id="@+id/action_tasksFragment_to_addEditTaskFragment"
+            app:destination="@id/addEditTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditTaskFragment"
+        android:name="com.codinginflow.mvvmtodo.ui.addedittask.AddEditTaskFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_add_edit_task" >
+        <argument
+            android:name="task"
+            app:argType="com.codinginflow.mvvmtodo.data.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>
