@@ -1,12 +1,12 @@
 package com.codinginflow.mvvmtodo.data
 
-import androidx.constraintlayout.helper.widget.Flow
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TaskDao {
     @Insert
-    suspend fun insert(task:Task)
+    suspend fun insert(task: Task)
 
     @Update
     suspend fun update(task: Task)
@@ -14,8 +14,8 @@ interface TaskDao {
     @Delete
     suspend fun delete()
 
-    //@Query("SELECT * From task_table")
-    //fun get(): Flow<List<Task>>
+    //here we didn't use suspend because we already use flow..
+    @Query("SELECT * From task_table")
+    fun getAllTasks(): Flow<List<Task>>
 
-    // test
 }

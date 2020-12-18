@@ -15,6 +15,7 @@ import java.text.DateFormat
 @Parcelize
 data class Task(
     //if you want the name of coulum in db is diffrent from the name used here then use  @ColumnInfo()
+    // Only Name is mandatory here the others have default data..
     @ColumnInfo(name = "Task_Name")
     val name: String,
     val important: Boolean = false,
